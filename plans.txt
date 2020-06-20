@@ -1,0 +1,57 @@
+сделать разделыдля фильтрации(типа: Игры, Наука, Программирование, Новости, Фильмы и т.п.)
+
+
+3выложить сайт
+4доработка(косяки + о нас + прелоадер)
+
+
+
+    bohtp5e81ywxu78sznmsumflf313e4pgnfobd3d0rb23v0wo
+
+
+
+
+
+
+
+
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    </div>
+    <div class="card-footer">
+      <p class="date">Last updated 3 mins ago</p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    </div>
+    <div class="card-footer">
+      <p class="date">Last updated 3 mins ago</p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+    </div>
+    <div class="card-footer">
+      <p class="date">Last updated 3 mins ago</p>
+    </div>
+  </div>
+</div>
+    <div class="btn3-block">
+<a href="{% url "articles" %}" class="btn btn3 btn-outline-light" style="transition: 0.5s">Подробнее</a>
+    </div>
+
+
+<div class="preloader">
+    <div>Re<span>ad</span>y<span> Pla</span>yer<span> One</span></div>
+</div>

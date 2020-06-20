@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}MathLegend{% endblock %}
+{% block content %}
+      <video autoplay loop muted class="bgvideo" id="bgvideo">
+   <source src="/static/video/rpo_2.mp4" type="video/mp4">
+  </video>
+
+
+<div class="container">
+    <div class="row">
+        <img src="/static/ico/CyberLogo.png" class="mx-auto d-block" alt="Logo" style="width: 400px; height: auto; margin-top: 60px">
+        {% if request.user.is_authenticated %}
+            <div class="col-12">
+                <div class="sign-wrap-3">
+                   <span class="sign_word">
+                      <h1 class="welcome mx-auto d-block">Welcome, {{ request.user }}</h1>
+                   </span>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-7">
+                <p class="under-welcome">
+                    Спасибо, {{ request.user }}, что зарегистрировался на CyberWorld. Мы непрерывно работаем над функционалом сайта, со временем здесь будет множество занимательных и полезных статей, появятся новые приложения, над которыми мы сейчас и работаем.
+                    <br><br><span class="under-welcome-text">CyberWorld - we will create the future</span>
+                </p>
+            </div>
+        </div>
+        {% else %}
+            <div class="col-10">
+                <div class="sign-wrap-3">
+                   <span class="sign_word">
+                      <h1 class="welcome mx-auto d-block">Welcome to CyberWorld</h1>
+                   </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <p class="under-welcome">
+                    CyberWorld - мир ограниченный лишь вашим сознанием, место где не важен ваш возраст, пол или имя. Со временем на сайте появится наша разработка, содержащая искусственный интеллект. Поэтому мы надеемся, что здесь вы погрузитесь в мир технологий, в мир будущего.
+                    <br>
+                    <br>
+                    <span class="under-welcome-text">Лучше взять и изобрести завтрашний день, чем переживать о том, что вчерашний был так себе.
+                    <br>
+                    <span>&copy;</span> Стив Джобс</span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10">
+                <a href="{% url "register" %}" class="btn btn1 btn-outline-light">Начать</a>
+                <a href="{% url "about_us" %}" class="btn btn2 btn-outline-light">О нас</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+      <!-- Footer-->
+      <footer class="container-fluid">
+         <div class="container-fluid">
+            <div class="row padding text-center">
+               <div class="col-12">
+                     <h3 class="contacts">Contacts</h3>
+               </div>
+               <div class="col-12 social padding">
+                  <a href="#" class="btn">
+                  <img src="/static/ico/at.png" alt="mail" class="s">
+                  </a>
+                  <a href="https://vk.com/public187784287" class="btn">
+                  <img src="/static/ico/vk.png" alt="vk" class="s">
+                  </a>
+                  <a href="#" class="btn">
+                  <img src="/static/ico/instagram.png" alt="instagram" class="s">
+                  </a>
+                  <a href="#" class="btn">
+                  <img src="/static/ico/telegram.png" alt="telegram" class="s">
+                  </a>
+               </div>
+            </div>
+         </div>
+      </footer>
+{% endblock %}
+
