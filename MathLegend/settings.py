@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7m)#2lmev*p$+j1(wc*++jx8t3-yl26pg2&jd%y-d%&5)gvt9d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cyberworld-shkuin.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
