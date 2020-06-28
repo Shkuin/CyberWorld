@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style type="text/css">
+    	body,
+		html {
+			height: 100%;
+			background-image: url("/static/img/graham-w-sketch-41-greyscale.jpg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+		}
+		.user_card {
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background: rgba(0, 0, 5, 0.68);
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+
+		}
+
+		.form_container {
+			margin-top: 20px;
+		}
+
+		.sign-wrap-1 {
+    text-align: center;
+}
+.sign-wrap-1 .sign_word {
+    font-size: 24px;
+    font-family: 'Jura', serif;
+    font-weight: bold;
+    color: #FFF;
+    text-transform: uppercase;
+    animation: neon-1 .1s ease-in-out infinite alternate;
+}
+@keyframes neon-1 {
+    from {
+        text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(191, 226, 255, 0.52), 0 0 21px rgba(191, 226, 255, 0.92), 0 0 34px rgba(191, 226, 255, 0.78), 0 0 54px rgba(191, 226, 255, 0.92);
+    }
+    to {
+        text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(191, 226, 255, 0.58), 0 0 22px rgba(191, 226, 255, 0.84), 0 0 38px rgba(191, 226, 255, 0.88), 0 0 60px #FFF;
+    }
+}
+
+		.login_btn {
+            font-family: 'Jura', serif;
+            font-size: 15px;
+			color: #ece9ee !important;
+            border: 2px solid transparent;
+            border-image: linear-gradient( 135deg, #ffffff 10%, #acacac 100%);
+            -moz-border-image: -moz-linear-gradient( 135deg, #ffffff 10%, #acacac 100%);
+            -webkit-border-image: -webkit-linear-gradient( 135deg, #ffffff 10%, #acacac 100%);
+            border-image-slice: 1;
+            border-radius: 50%;
+
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background-image: linear-gradient(135deg, #ffffff 10%, #acacac 100%); !important;
+			color: #ece9ee !important;
+			border: 0 !important;
+			border-radius: 2px 0px 0px 2px !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+
+		#messages{
+			font-family: 'Jura', serif;
+            font-size: 15px;
+            color: #ffffff;
+            text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #FFFFFF, 0 0 80px #FFFFFF, 0 0 90px #FFFFFF, 0 0 100px #FFFFFF, 0 0 150px #FFFFFF;
+            padding: 10px;
+			margin-top: 10px;
+		}
+        .ml-2{
+            color: #ffffff;
+            font-family: 'Jura', serif;
+            font-size: 15px;
+
+        }
+        .ml-2:hover{
+            text-decoration: none;
+            color: #acacac;
+
+
+        }
+        .links{
+            font-family: 'Jura', serif;
+            background: linear-gradient(135deg, #ffffff 10%, #acacac 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #ffffff;
+            font-size: 15px;
+        }
+
+        .ml-3{
+            color: #ffffff;
+            font-family: 'Jura', serif;
+            font-size: 15px;
+        }
+
+        .ml-3:hover{
+            text-decoration: none;
+            color: #acacac;
+        }
+
+        .click{
+            background: linear-gradient(135deg, #ffffff 10%, #acacac 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: white;
+            font-family: 'Jura', serif;
+            font-size: 15px;
+        }
+
+        .form-control{
+            background: rgba(0,0,5,0);
+            font-family: 'Jura', serif;
+        }
+        
+
+
+    </style>
+    <div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="sign-wrap-1">
+                    <span class="sign_word">ВХОД</span>
+                </div>
+				<div class="d-flex justify-content-center form_container">
+					<form method="POST" action="">
+                        {% csrf_token %}
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><img src="/static/ico/artificial-intelligence.png" alt="" width="20px" height="20px"></span>
+							</div>
+							<input type="text" name="username" placeholder="Username" class="form-control">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><img src="/static/ico/security(1).png" alt="" width="20px" height="20px"></span>
+							</div>
+								<input type="password" name="password" placeholder="Password" class="form-control" >
+						</div>
+
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 			<input class="btn btn1 btn-outline-light" type="submit" value="Начать">
+				   			</div>
+					</form>
+
+				</div>
+
+                {% for message in messages %}
+                    <p id="messages">{{ message }}</p>
+                {% endfor %}
+
+				<div class="mt-4">
+					<div class="d-flex justify-content-center">
+						<div class="links">У вас нет аккаунта?</div> <a href="{% url 'register' %}" class="ml-2">Регистрация</a>
+					</div>
+				</div>
+            <div class="mt-4">
+                <div class="d-flex justify-content-center">
+                    <div class="click">Забыли пароль?</div><a href="{% url "reset_password" %}" class="ml-3">Новый пароль</a>
+                </div>
+            </div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
